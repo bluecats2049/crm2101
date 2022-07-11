@@ -1,0 +1,64 @@
+package com.hezexy.jdbc;
+
+import java.sql.*;
+import java.util.ResourceBundle;
+
+public class JDBCTest02 {
+    public static void main(String[] args) {
+
+        //资源绑定器
+        ResourceBundle bundle = ResourceBundle.getBundle("resources.db");
+        String driver = bundle.getString("driver");
+        String url = bundle.getString("url");
+        String user = bundle.getString("user");
+        String password = bundle.getString("password");
+
+        Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+        try {
+            //注册驱动
+            Class.forName(driver);
+            //获取链接
+            conn = DriverManager.getConnection(url,user,password);
+            //获取数据库操作对象
+            stmt = conn.createStatement();
+            //执行SQL
+            String sql = "select e.ename,d.dname from emp e join dept d on e.deptno = d.deptno";
+            rs = stmt.executeQuery(sql);
+            //处理查询结果集
+            while (rs.next()){
+                String ename = rs.getString("ename");
+                String dname = rs.getString("dname");
+                System.out.println(ename+","+dname);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } finally {
+            //释放资源
+            if(rs != null){
+                try {
+                    rs.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (stmt != null){
+                try {
+                    stmt.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (conn != null){
+                try {
+                    conn.close();
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+            }
+        }
+    }
+}
