@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="courseajax:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/courseajax_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="course-ajax/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="course-ajax" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="D:/tomcat/apache-tomcat-10.0.20/lib/jsp-api.jar" />
+          <element id="file-copy" path="D:/tomcat/apache-tomcat-10.0.20/lib/servlet-api.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

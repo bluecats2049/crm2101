@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="queryInfo:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/queryInfo_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="queryInfo/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="queryInfo" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="D:/tomcat/apache-tomcat-10.0.20/lib/servlet-api.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/queryInfo/web/WEB-INF/lib/jackson-core-2.9.0.jar" />
+          <element id="file-copy" path="D:/tomcat/apache-tomcat-10.0.20/lib/jsp-api.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/queryInfo/web/WEB-INF/lib/mysql-connector-java-5.1.6.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/queryInfo/web/WEB-INF/lib/jackson-databind-2.9.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/queryInfo/web/WEB-INF/lib/jackson-annotations-2.9.0.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
